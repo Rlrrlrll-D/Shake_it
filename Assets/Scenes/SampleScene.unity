@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 1699778858}
   - component: {fileID: 1699778857}
   m_Layer: 0
-  m_Name: CollideHandler
+  m_Name: ColliderHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
