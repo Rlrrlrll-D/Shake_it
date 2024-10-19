@@ -356,8 +356,8 @@ Transform:
   m_GameObject: {fileID: 717413910}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2374, y: 0.2374, z: 0.2374}
+  m_LocalPosition: {x: 0, y: 3.58, z: 0}
+  m_LocalScale: {x: 0.2112, y: 0.2112, z: 0.2112}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1699778858}
-  - component: {fileID: 1699778857}
+  - component: {fileID: 1699778859}
   m_Layer: 0
   m_Name: ColliderHolder
   m_TagString: Untagged
@@ -379,50 +379,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!68 &1699778857
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699778856}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: d6735499501a39a4b9c47dd8b39b601e, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -2.0459566, y: -4.5469313}
-  - {x: -1.9302562, y: 4.697969}
-  - {x: 1.9331653, y: 4.703898}
-  - {x: 1.9978077, y: -4.5204105}
-  - {x: -2.010037, y: -4.5561557}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!4 &1699778858
 Transform:
   m_ObjectHideFlags: 0
@@ -438,6 +394,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1699778859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699778856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5401af93daefc754b80d0565f722fa0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bouncyMaterial: {fileID: 6200000, guid: d6735499501a39a4b9c47dd8b39b601e, type: 2}
+  friction: 0
+  bounciness: 0.65
 --- !u!1 &2007263935
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShakeForceMultiplier: 5
-  circleCount: 3
+  circleCount: 10
   prefab: {fileID: 371622814301645764, guid: afc6896f11a685246b7ea65710bf0175, type: 3}
   circles: []
   Donor: {fileID: 717413910}
