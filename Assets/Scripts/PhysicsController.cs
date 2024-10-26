@@ -10,6 +10,10 @@ public class PhysicsController : MonoBehaviour {
     public GameObject Donor;
     private Rigidbody2D rb;
 
+    [SerializeField] private float _minX, _maxX;
+    [SerializeField] private float _minY, _maxY;
+    [SerializeField] private float _speed;
+
 
 
 
@@ -41,5 +45,18 @@ public class PhysicsController : MonoBehaviour {
     }
     public void ShakeDonor(Vector3 devAcceleration) {
         rb.AddForce(devAcceleration * ShakeForceMultiplier, ForceMode2D.Impulse);
+    }
+
+    public void ShakeRigitbodies2() {      
+        foreach (var rigidbody in rigidbodies) {
+            float moveX = Random.RandomRange(_minX, _maxX);
+            float moveY = Random.RandomRange(_minY, _maxY);
+            rigidbody.velocity = new Vector2(moveX, moveY)*_speed;
+        }
+    }
+    public void ShakeDonor2() {
+        float moveX = Random.RandomRange(_minX, _maxX);
+        float moveY = Random.RandomRange(_minY, _maxY);       
+        rb.velocity = new Vector2(moveX, moveY)*_speed;
     }
 }
