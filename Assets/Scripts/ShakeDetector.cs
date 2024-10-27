@@ -23,11 +23,16 @@ public class ShakeDetector: MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.acceleration.sqrMagnitude >= sqrShakeDetectionThreshold && Time.unscaledTime >= timeSinceLastShake + MinInterval) {
+        if (Input.acceleration.sqrMagnitude >= sqrShakeDetectionThreshold && Time.unscaledTime >= timeSinceLastShake + MinInterval)
+        {
             physicsController.ShakeRigitbodies(Input.acceleration);
             physicsController.ShakeDonor(Input.acceleration);
             timeSinceLastShake = Time.unscaledTime;
 
         }
+
+        physicsController.ShakeWithSpaceButton();
+
+  
     }
 }

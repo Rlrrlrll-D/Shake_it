@@ -1,9 +1,11 @@
 
 using UnityEngine;
 
-public class PhysicsController : MonoBehaviour {
+public class PhysicsController : MonoBehaviour
+{
     // Start is called before the first frame update
     public float ShakeForceMultiplier;
+    public float speed;
     public int circleCount;
     public GameObject prefab;
     public GameObject[] circles;
@@ -14,7 +16,8 @@ public class PhysicsController : MonoBehaviour {
 
 
     public Rigidbody2D[] rigidbodies;
-    private void Awake() {
+    private void Awake()
+    {
         circles = new GameObject[circleCount];
         rigidbodies = new Rigidbody2D[circleCount];
 
@@ -22,7 +25,8 @@ public class PhysicsController : MonoBehaviour {
         Camera mainCamera = Camera.main;
         float screenWidth = mainCamera.orthographicSize * mainCamera.aspect;
         float screenHeight = mainCamera.orthographicSize;
-        for (int i = 0; i < circleCount; i++) {
+        for (int i = 0; i < circleCount; i++)
+        {
             float randomX = Random.Range(-screenWidth + 1, screenWidth - 1);
             float randomY = Random.Range(-screenHeight + 1, screenHeight - 1);
             circles[i] = Instantiate(prefab, new Vector2(randomX, randomY), Quaternion.identity);
@@ -31,15 +35,32 @@ public class PhysicsController : MonoBehaviour {
     }
 
 
-    public void ShakeRigitbodies(Vector3 devAcceleration) {
+    public void ShakeRigitbodies(Vector3 devAcceleration)
+    {
 
-        foreach (var rigidbody in rigidbodies) {
+        foreach (var rigidbody in rigidbodies)
+        {
 
             rigidbody.AddForce(devAcceleration * ShakeForceMultiplier, ForceMode2D.Impulse);
 
         }
     }
-    public void ShakeDonor(Vector3 devAcceleration) {
+    public void ShakeDonor(Vector3 devAcceleration)
+    {
         rb.AddForce(devAcceleration * ShakeForceMultiplier, ForceMode2D.Impulse);
+    }
+
+    public void ShakeWithSpaceButton()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            /*foreach (var rigidbody in rigidbodies)
+            {
+                rigidbody.AddForce(rigidbody.velocity * speed, ForceMode2D.Impulse);
+             
+            }*/
+
+            rb.AddForce(rb.velocity * speed, ForceMode2D.Impulse);
+        }
     }
 }

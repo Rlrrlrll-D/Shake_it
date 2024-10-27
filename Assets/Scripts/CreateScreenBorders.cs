@@ -44,10 +44,12 @@ public class CreateScreenBorders : MonoBehaviour {
     void CreateBorder(string name, Vector2 position, Vector2 size) {
         GameObject border = new GameObject(name);
         border.transform.position = position;
-        var rigidbody = border.AddComponent<Rigidbody2D>();
-        rigidbody.bodyType = RigidbodyType2D.Static;
         var collider = border.AddComponent<BoxCollider2D>();
         collider.size = size;
+        var rigidbody = border.AddComponent<Rigidbody2D>();
+        rigidbody.bodyType = RigidbodyType2D.Static;
+        rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+        
         collider.sharedMaterial = bouncyMaterial;
     }
     
