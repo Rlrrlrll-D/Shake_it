@@ -5,7 +5,6 @@ public class PhysicsController : MonoBehaviour
 {
     // Start is called before the first frame update
     public float ShakeForceMultiplier;
-    public float speed;
     public int circleCount;
     public GameObject prefab;
     public GameObject[] circles;
@@ -54,32 +53,22 @@ public class PhysicsController : MonoBehaviour
         rb.AddForce(devAcceleration * ShakeForceMultiplier, ForceMode2D.Impulse);
     }
 
-<<<<<<< HEAD
-    public void ShakeWithSpaceButton()
+    //[System.Obsolete]
+    public void ShakeRigitbodies2()
     {
-        if (Input.GetMouseButton(0))
+        foreach (var rigidbody in rigidbodies)
         {
-            /*foreach (var rigidbody in rigidbodies)
-            {
-                rigidbody.AddForce(rigidbody.velocity * speed, ForceMode2D.Impulse);
-             
-            }*/
+            float moveX = Random.Range(_minX, _maxX);
+            float moveY = Random.Range(_minY, _maxY);
+            rigidbody.velocity = new Vector2(moveX, moveY) * _speed;
+        }
+    }
 
-            rb.AddForce(rb.velocity * speed, ForceMode2D.Impulse);
-        }
+    //[System.Obsolete]
+    public void ShakeDonor2()
+    {
+        float moveX = Random.Range(_minX, _maxX);
+        float moveY = Random.Range(_minY, _maxY);
+        rb.velocity = new Vector2(moveX, moveY) * _speed;
     }
-=======
-    public void ShakeRigitbodies2() {      
-        foreach (var rigidbody in rigidbodies) {
-            float moveX = Random.RandomRange(_minX, _maxX);
-            float moveY = Random.RandomRange(_minY, _maxY);
-            rigidbody.velocity = new Vector2(moveX, moveY)*_speed;
-        }
-    }
-    public void ShakeDonor2() {
-        float moveX = Random.RandomRange(_minX, _maxX);
-        float moveY = Random.RandomRange(_minY, _maxY);       
-        rb.velocity = new Vector2(moveX, moveY)*_speed;
-    }
->>>>>>> 2e91d2addfd86843abca48dec9fe36fc0ff858fa
 }
