@@ -165,4 +165,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31dab3ac05c31014b8a7e9f428fa4cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saturationIncrement: 0.03
+  saturationIncrement: 0.05

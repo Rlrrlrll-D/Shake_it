@@ -43,6 +43,7 @@ public class CreateScreenBorders : MonoBehaviour {
     }
     void CreateBorder(string name, Vector2 position, Vector2 size) {
         GameObject border = new GameObject(name);
+        border.tag = "Border";
         border.transform.position = position;
         var collider = border.AddComponent<BoxCollider2D>();
         collider.size = size;
