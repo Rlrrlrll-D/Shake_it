@@ -12,6 +12,7 @@ public class ShakeDetector: MonoBehaviour
     private float sqrShakeDetectionThreshold;
     private float timeSinceLastShake;
     private PhysicsController physicsController;
+    
 
     void Start()
     {
@@ -21,14 +22,24 @@ public class ShakeDetector: MonoBehaviour
     }
 
     // Update is called once per frame
+    //[System.Obsolete]
     void FixedUpdate()
     {
+<<<<<<< HEAD
         if (Input.acceleration.sqrMagnitude >= sqrShakeDetectionThreshold && Time.unscaledTime >= timeSinceLastShake + MinInterval)
         {
+=======
+        /*if (Input.acceleration.sqrMagnitude >= sqrShakeDetectionThreshold && Time.unscaledTime >= timeSinceLastShake + MinInterval) {
+>>>>>>> 2e91d2addfd86843abca48dec9fe36fc0ff858fa
             physicsController.ShakeRigitbodies(Input.acceleration);
             physicsController.ShakeDonor(Input.acceleration);
             timeSinceLastShake = Time.unscaledTime;
 
+        }*/
+        if (Input.GetMouseButtonDown(0)||Input.GetKeyDown(KeyCode.Space)) {
+            
+            physicsController.ShakeRigitbodies2();
+            physicsController.ShakeDonor2();
         }
 
         physicsController.ShakeWithSpaceButton();
