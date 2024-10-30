@@ -60,7 +60,7 @@ public class PhysicsController : MonoBehaviour
         {
             float moveX = Random.Range(_minX, _maxX);
             float moveY = Random.Range(_minY, _maxY);
-            rigidbody.velocity = new Vector2(moveX, moveY) * _speed;
+            rigidbody.velocity = new Vector2(moveX, moveY) * _speed*Time.fixedDeltaTime;
         }
     }
 
@@ -69,6 +69,6 @@ public class PhysicsController : MonoBehaviour
     {
         float moveX = Random.Range(_minX, _maxX);
         float moveY = Random.Range(_minY, _maxY);
-        rb.velocity = new Vector2(moveX, moveY) * _speed;
+        rb.velocity = new Vector2(moveX, moveY) * _speed*Time.fixedDeltaTime;
     }
 }
