@@ -459,6 +459,11 @@ MonoBehaviour:
   prefab: {fileID: 371622814301645764, guid: afc6896f11a685246b7ea65710bf0175, type: 3}
   circles: []
   Donor: {fileID: 717413910}
+  _minX: -2.5
+  _maxX: 2.5
+  _minY: -5.5
+  _maxY: 5.5
+  _speed: 5
   rigidbodies: []
 --- !u!4 &2007263938
 Transform:
