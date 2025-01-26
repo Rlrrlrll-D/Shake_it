@@ -274,7 +274,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: df4b645b97debad48bffd494bb6b3693, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: b3dc217e05eda0d40a0921d66b571a34, type: 3}
   m_Color: {r: 0.86522907, g: 0.12477018, b: 0.12477018, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -294,7 +294,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 717413910}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ce1274eb6b7a81b4c82f741f5fea0307, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -336,7 +336,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ce1274eb6b7a81b4c82f741f5fea0307, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bouncyMaterial: {fileID: 6200000, guid: d6735499501a39a4b9c47dd8b39b601e, type: 2}
   friction: 0
-  bounciness: 0.65
+  bounciness: 0.1
 --- !u!1 &2007263935
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShakeForceMultiplier: 5
-  circleCount: 30
+  circleCount: 100
   prefab: {fileID: 371622814301645764, guid: afc6896f11a685246b7ea65710bf0175, type: 3}
   circles: []
   Donor: {fileID: 717413910}
@@ -474,7 +474,7 @@ Transform:
   m_GameObject: {fileID: 2007263935}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7319047, y: -1.9980967, z: 0.06197474}
+  m_LocalPosition: {x: -5.21, y: -4.74, z: 0.06197474}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
