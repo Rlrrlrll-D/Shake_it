@@ -9,7 +9,7 @@ public class AccelerometerMovement : MonoBehaviour {
     private float screenHeight;
     private float objWidth;
     private float objHeight;
-    private RectTransform rectTransform;
+    //private RectTransform rectTransform;
 
     void Start() {
         // Определяем границы экрана

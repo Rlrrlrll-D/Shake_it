@@ -21,9 +21,6 @@ public class ShakeDetector : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    //[System.Obsolete]
-    //[System.Obsolete]
     void FixedUpdate()
     {
         /*if (Input.acceleration.sqrMagnitude >= sqrShakeDetectionThreshold && Time.unscaledTime >= timeSinceLastShake + MinInterval) {
@@ -32,11 +29,10 @@ public class ShakeDetector : MonoBehaviour
             timeSinceLastShake = Time.unscaledTime;
 
         }*/
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
-        {
-
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) {
             physicsController.ShakeRigitbodies2();
             physicsController.ShakeDonor2();
+            physicsController.IncreaseSaturation();
         }
     }
 }
