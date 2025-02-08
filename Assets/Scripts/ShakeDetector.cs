@@ -30,9 +30,10 @@ public class ShakeDetector : MonoBehaviour
 
         }*/
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) {
-            physicsController.ShakeRigitbodies2();
-            physicsController.ShakeDonor2();
+
+            
             physicsController.IncreaseSaturation();
+            physicsController.ShakeRigitbodies2();
         }
     }
 }

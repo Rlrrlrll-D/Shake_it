@@ -3,13 +3,11 @@ using UnityEngine;
 //[RequireComponent(typeof(PhysicsController))]
 public class Circle : MonoBehaviour
 {
-
     private GameObject _donorObject;
     private Color _donorColor;
     private PhysicsController _physicsController;
     private bool gameEnded;
 
-    public float saturationIncrement = 0.01f;
     private void Start()
     {
 
@@ -30,8 +28,7 @@ public class Circle : MonoBehaviour
 
     public void Update()
     {
-        if (gameEnded)
-            return;
+       
         CheckGameEnd();
         
     }
@@ -54,22 +51,18 @@ public class Circle : MonoBehaviour
         
         foreach (GameObject obj in _physicsController.circles)
         {
+            SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
 
-            if (obj != null)
-            {
-                SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
-                if (sr != null)
-                {
-                    float h, s, v;
-                    Color.RGBToHSV(sr.color, out h, out s, out v);
+            float h, s, v;
+            Color.RGBToHSV(sr.color, out h, out s, out v);
                     Debug.Log("Object saturation: " + s + ", Donor saturation: " + donorSaturation);
-                    if (s < donorSaturation)
-                    {
-                        allObjectsSaturated = false;
-                        break;
-                    }
-                }
-            }
+           if (s < donorSaturation)
+           {
+              allObjectsSaturated = false;
+              break;
+           }
+                
+            
         }
 
         if (allObjectsSaturated) {
