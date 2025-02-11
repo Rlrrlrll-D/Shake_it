@@ -11,7 +11,7 @@ public class PhysicsController : MonoBehaviour {
     private Rigidbody2D rb;
     private Color _donorColor;
     private SpriteRenderer _donorSprite;
-    private SpriteRenderer _circleSprite;
+    //private SpriteRenderer _circleSprite;
 
     [SerializeField] private float saturationIncrement = 0.01f;
     [SerializeField] private float _minX, _maxX;
@@ -50,7 +50,7 @@ public class PhysicsController : MonoBehaviour {
             float randomY = Random.Range(-screenHeight + 1, screenHeight - 1);
             circles[i] = Instantiate(prefab, new Vector2(randomX, randomY), Quaternion.identity);
             rigidbodies[i] = circles[i].GetComponent<Rigidbody2D>();
-            _circleSprite = circles[i].GetComponent<SpriteRenderer>();
+            SpriteRenderer _circleSprite = circles[i].GetComponent<SpriteRenderer>();
             _circleSprite.color = Color.HSVToRGB(donorH, saturationIncrement, donorV);
         }
     }
@@ -96,4 +96,11 @@ public class PhysicsController : MonoBehaviour {
         }
 
     }
+    public void StopGame() {
+        
+        Debug.Log("Level complete!");
+        Time.timeScale = 0;
+        Debug.Break();
+    }
 }
+   
