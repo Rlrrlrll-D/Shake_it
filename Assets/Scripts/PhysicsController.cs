@@ -11,7 +11,6 @@ public class PhysicsController : MonoBehaviour {
     private Rigidbody2D rb;
     private Color _donorColor;
     private SpriteRenderer _donorSprite;
-    //private SpriteRenderer _circleSprite;
 
     [SerializeField] private float saturationIncrement = 0.01f;
     [SerializeField] private float _minX, _maxX;
@@ -43,9 +42,12 @@ public class PhysicsController : MonoBehaviour {
         CircleInstantiate(donorH, donorV, screenWidth, screenHeight);
     }
 
-    private void CircleInstantiate(float donorH, float donorV, float screenWidth, float screenHeight) {
-        for (int i = 0; i < circleCount; i++) {
+    void Update() {
+        CheckGameEnd();
+    }
 
+    private void CircleInstantiate(float donorH, float donorV, float screenWidth, float screenHeight) {
+        for (int i = 0; i < circleCount; i++) { 
             float randomX = Random.Range(-screenWidth + 1, screenWidth - 1);
             float randomY = Random.Range(-screenHeight + 1, screenHeight - 1);
             circles[i] = Instantiate(prefab, new Vector2(randomX, randomY), Quaternion.identity);
@@ -101,6 +103,33 @@ public class PhysicsController : MonoBehaviour {
         Debug.Log("Level complete!");
         Time.timeScale = 0;
         Debug.Break();
+    }
+    void CheckGameEnd() {
+
+
+        float donorSaturation;
+
+        Color.RGBToHSV(_donorColor, out _, out donorSaturation, out _);
+
+        bool allObjectsSaturated = true;
+
+
+        foreach (GameObject obj in circles) {
+            SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
+
+            float h, s, v;
+            Color.RGBToHSV(sr.color, out h, out s, out v);
+            if (s < donorSaturation) {
+                allObjectsSaturated = false;
+                break;
+            }
+
+
+        }
+
+        if (allObjectsSaturated) {
+            StopGame();
+        }
     }
 }
    

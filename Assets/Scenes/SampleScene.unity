@@ -275,7 +275,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: b3dc217e05eda0d40a0921d66b571a34, type: 3}
-  m_Color: {r: 0.86522907, g: 0.12477018, b: 0.12477018, a: 1}
+  m_Color: {r: 0.09726834, g: 0.85, b: 0.09508078, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShakeForceMultiplier: 5
-  circleCount: 50
+  circleCount: 200
   prefab: {fileID: 371622814301645764, guid: afc6896f11a685246b7ea65710bf0175, type: 3}
   circles: []
   Donor: {fileID: 717413910}
