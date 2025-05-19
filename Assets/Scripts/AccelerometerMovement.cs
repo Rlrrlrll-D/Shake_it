@@ -20,7 +20,7 @@ public class AccelerometerMovement : MonoBehaviour {
         objHeight = rectTransform.rect.height;
     }
 
-    void FixedUpdate() {
+    void Update() {
         Vector3 acceleration = Input.acceleration; // Получаем данные акселерометра
         Vector2 movement = new Vector2(acceleration.x, acceleration.y) * speed * Time.deltaTime; // Вычисляем движение в 2D
 

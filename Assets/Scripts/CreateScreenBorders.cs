@@ -2,14 +2,18 @@ using UnityEngine;
 
 public class CreateScreenBorders : MonoBehaviour {
     private static bool bordersCreated = false;
-   
-    [SerializeField]private PhysicsMaterial2D bouncyMaterial;
-    [SerializeField]private float  friction;
-    [SerializeField]private float bounciness;
-    
+
+    public CreateScreenBorders(PhysicsMaterial2D bouncyMaterial) {
+        this.bouncyMaterial = bouncyMaterial;
+    }
+
+    [SerializeField] private PhysicsMaterial2D bouncyMaterial;
+    [SerializeField] private float friction;
+    [SerializeField] private float bounciness;
+
     // Флаг для создания границ
     private void Awake() {
-        bouncyMaterial.friction = friction; 
+        bouncyMaterial.friction = friction;
         bouncyMaterial.bounciness = bounciness;
     }
     private void Start() {
@@ -43,7 +47,7 @@ public class CreateScreenBorders : MonoBehaviour {
     }
     void CreateBorder(string name, Vector2 position, Vector2 size) {
         GameObject border = new GameObject(name);
-        border.tag = "Border";
+     
         border.transform.position = position;
 
         var collider = border.AddComponent<BoxCollider2D>();
@@ -53,8 +57,5 @@ public class CreateScreenBorders : MonoBehaviour {
         var rigidbody = border.AddComponent<Rigidbody2D>();
         rigidbody.bodyType = RigidbodyType2D.Static;
         rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-        
-        
     }
-    
 }
